@@ -44,31 +44,22 @@ async function sendEmail(event) {
         }
     };
 
-    emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            window.location.href = 'confirmation.html';
-        }, function(error) {
-            console.log('FAILED...', error);
-            document.getElementById('status-message').innerHTML = 
-                "There was an error sending your request. Please try again.";
-        });
+    try {
+        const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
+        console.log('SUCCESS!', response.status, response.text);
+        // Use the full URL for the redirect
+        window.location.href = '/confirmation.html';  // or use the full URL if needed: 'https://your-domain.vercel.app/confirmation.html'
+    } catch (error) {
+        console.log('FAILED...', error);
+        document.getElementById('status-message').innerHTML = 
+            "There was an error sending your request. Please try again.";
+    }
 }
 
+// Add event listener when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('meetingForm');
-    
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        try {
-            // Your existing emailjs send logic here
-            
-            // After successful submission
-            window.location.href = '/confirmation';  // or whatever your confirmation page URL is
-        } catch (error) {
-            console.error('Error:', error);
-            document.getElementById('status-message').textContent = 'Something went wrong. Please try again.';
-        }
-    });
+    if (form) {
+        form.addEventListener('submit', sendEmail);
+    }
 });

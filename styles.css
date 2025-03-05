@@ -99,6 +99,10 @@ h2 {
     border-left: 5px solid #092100;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .welcome-box:hover, .terms-box:hover, .features-box:hover, .why-book-box:hover {
@@ -127,16 +131,7 @@ h2 {
 }
 
 .calendar-box {
-    background: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    border-top: 4px solid #092100;
-    border-left: none;
-    box-shadow: 
-        0 15px 35px rgba(140, 122, 107, 0.1),
-        0 5px 15px rgba(0, 0, 0, 0.05);
-    transform: translateY(0);
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #fff 0%, #F4F2ED 100%);
 }
 
 .calendar-box h2 {
@@ -156,7 +151,14 @@ h2 {
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 label {
@@ -437,4 +439,9 @@ li:hover:before {
     .confirmation-box p {
         font-size: 16px;
     }
+}
+
+/* Add this to ensure consistent form sizing */
+#meetingForm {
+    width: 100%;
 } 
