@@ -48,11 +48,17 @@ async function sendEmail(event) {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
         
-        // Create and click a link programmatically
-        const link = document.createElement('a');
-        link.href = '/confirmation.html';
-        link.click();
-        
+        // Try multiple redirect methods
+        try {
+            window.location.assign('/confirmation.html');
+        } catch (redirectError) {
+            try {
+                window.location.href = '/confirmation';
+            } catch (secondRedirectError) {
+                // Final fallback: try the full URL
+                window.location.replace(window.location.origin + '/confirmation.html');
+            }
+        }
     } catch (error) {
         console.log('FAILED...', error);
         const statusMessage = document.getElementById('status-message');
