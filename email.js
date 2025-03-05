@@ -48,8 +48,11 @@ async function sendEmail(event) {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
         
-        // Use window.location.replace for more reliable redirect
-        window.location.replace(`${window.location.origin}/confirmation.html`);
+        // Create and click a link programmatically
+        const link = document.createElement('a');
+        link.href = '/confirmation.html';
+        link.click();
+        
     } catch (error) {
         console.log('FAILED...', error);
         const statusMessage = document.getElementById('status-message');
