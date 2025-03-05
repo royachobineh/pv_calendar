@@ -47,25 +47,11 @@ async function sendEmail(event) {
     try {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
-        
-        // Try multiple redirect methods
-        try {
-            window.location.assign('/confirmation.html');
-        } catch (redirectError) {
-            try {
-                window.location.href = '/confirmation';
-            } catch (secondRedirectError) {
-                // Final fallback: try the full URL
-                window.location.replace(window.location.origin + '/confirmation.html');
-            }
-        }
+        window.location.href = '/confirmation';
     } catch (error) {
         console.log('FAILED...', error);
-        const statusMessage = document.getElementById('status-message');
-        if (statusMessage) {
-            statusMessage.style.display = 'block';
-            statusMessage.innerHTML = "There was an error sending your request. Please try again.";
-        }
+        document.getElementById('status-message').innerHTML = 
+            "There was an error sending your request. Please try again.";
     }
 }
 
