@@ -47,12 +47,16 @@ async function sendEmail(event) {
     try {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
-        // Use the full URL for the redirect
-        window.location.href = '/confirmation.html';  // or use the full URL if needed: 'https://your-domain.vercel.app/confirmation.html'
+        
+        // Use window.location.replace for more reliable redirect
+        window.location.replace(`${window.location.origin}/confirmation.html`);
     } catch (error) {
         console.log('FAILED...', error);
-        document.getElementById('status-message').innerHTML = 
-            "There was an error sending your request. Please try again.";
+        const statusMessage = document.getElementById('status-message');
+        if (statusMessage) {
+            statusMessage.style.display = 'block';
+            statusMessage.innerHTML = "There was an error sending your request. Please try again.";
+        }
     }
 }
 
