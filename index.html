@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Meeting Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="myVideo">
+            <source src="background.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="welcome-box">
+            <h1>Welcome to the Most Exclusive Meeting Scheduler</h1>
+            <p class="intro">Hey Kooshiar, you're in luck! You've been given the once-in-a-lifetime opportunity to schedule a meeting with me.</p>
+        </div>
+
+        <div class="terms-box">
+            <h2>Terms & Conditions</h2>
+            <ul>
+                <li>You must acknowledge that I have nothing to teach you but will gladly pretend.</li>
+                <li>By booking this meeting, you agree that I am the real expert (whether that's true or not).</li>
+                <li>Rescheduling? Not an option. This is a VIP experience.</li>
+                <li>Payment? Your knowledge is the price.</li>
+            </ul>
+        </div>
+
+        <div class="features-box">
+            <h2>What You'll Learn (Maybe)</h2>
+            <ul>
+                <li>Cursor Basics: Things you already know but I'll explain dramatically.</li>
+                <li>How to Move a Mouse: If you're struggling, I got you.</li>
+                <li>Copy-Pasting Like a Pro: Advanced CTRL+C/CTRL+V techniques.</li>
+                <!-- <li>Mind-Blowing Productivity Hacks: Just kidding. You probably taught me these.</li> -->
+            </ul>
+        </div>
+
+        <div class="why-book-box">
+            <h2>Why You Should Book This Meeting?</h2>
+            <ul>
+                <li>Because canceling on a successful person once was bold, twice is a crime.</li>
+                <li>You get a customized, elite, and completely unnecessary tutorial.</li>
+                <li>It'll be a legendary story you can tell at parties.</li>
+            </ul>
+        </div>
+
+        <div class="calendar-box">
+            <h2>Schedule Your Exclusive Meeting Below!</h2>
+            <form id="meetingForm" onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">Select Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="1">1 minute (not recommended)</option>
+                        <option value="10">10 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="1440">Full day!</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Teach Me What I Should Be Teaching You</button>
+            </form>
+            <div id="status-message"></div>
+        </div>
+    </div>
+
+    <script src="email.js"></script>
+</body>
+</html>

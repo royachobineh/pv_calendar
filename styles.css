@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #F4F2ED 0%, #E8E1D7 100%);
+    min-height: 100vh;
+    padding: 40px 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Decorative background elements */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 103, 0, 0.03) 0%, transparent 70%);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(9, 33, 0, 0.03) 0%, transparent 70%);
+    transform: rotate(15deg);
+    z-index: -1;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Headings */
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #092100;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #092100, #FF6700);
+    border-radius: 2px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #092100;
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-box, .terms-box, .features-box, .why-book-box, .calendar-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 
+        0 10px 30px rgba(140, 122, 107, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(232, 225, 215, 0.5);
+    border-left: 5px solid #092100;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-box:hover, .terms-box:hover, .features-box:hover, .why-book-box:hover {
+    transform: translateY(-5px);
+    border-left-color: #FF6700;
+    box-shadow: 
+        0 20px 40px rgba(140, 122, 107, 0.15),
+        0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-box {
+    background: linear-gradient(135deg, #fff 0%, #F4F2ED 100%);
+    border-left-width: 8px;
+}
+
+.terms-box {
+    background: linear-gradient(135deg, #fff 0%, #F4F2ED 100%);
+}
+
+.features-box {
+    background: linear-gradient(135deg, #F4F2ED 0%, #fff 100%);
+}
+
+.why-book-box {
+    background: linear-gradient(135deg, #fff 0%, #F4F2ED 100%);
+}
+
+.calendar-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    border-top: 4px solid #092100;
+    border-left: none;
+    box-shadow: 
+        0 15px 35px rgba(140, 122, 107, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.calendar-box h2 {
+    color: #092100;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.calendar-box h2::after {
+    background: linear-gradient(to right, #092100, #FF6700);
+    transform: scaleX(0.5);
+}
+
+.calendar-box:hover h2::after {
+    transform: scaleX(1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-family: 'Inter', sans-serif;
+    display: block;
+    margin-bottom: 8px;
+    color: #092100;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E8E1D7;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #092100;
+    transition: all 0.3s ease;
+    background-color: #F4F2ED;
+    background-image: 
+        linear-gradient(to right, rgba(9, 33, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(9, 33, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    border-color: #092100;
+    box-shadow: 0 0 0 3px rgba(9, 33, 0, 0.1);
+    background-color: #fff;
+}
+
+.submit-btn {
+    background: linear-gradient(145deg, #092100, #0f3600);
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(145deg, #FF6700, #ff7b1f);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(9, 33, 0, 0.2);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#status-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #E8E1D7;
+    color: #092100;
+    text-align: center;
+    display: none;
+}
+
+#status-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+/* Calendar Input Specific Styling */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 5px;
+    filter: invert(8%) sepia(8%) saturate(6744%) hue-rotate(84deg) brightness(96%) contrast(98%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23092100' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    padding-right: 35px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .welcome-box, .terms-box, .features-box, .why-book-box, .calendar-box {
+        padding: 25px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 15px;
+    }
+
+    .calendar-box {
+        padding: 25px;
+    }
+    
+    input[type="date"],
+    input[type="time"],
+    input[type="email"],
+    select {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(244, 242, 237, 0.97) 0%,
+        rgba(232, 225, 215, 0.95) 100%
+    );
+}
+
+/* Special Text Elements */
+blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #092100;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding-left: 20px;
+    border-left: 3px solid #FF6700;
+}
+
+blockquote footer {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #8C7A6B;
+    margin-top: 10px;
+    font-style: normal;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+li {
+    color: #8C7A6B;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    transition: transform 0.2s ease;
+}
+
+li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #FF6700;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    transform: translateX(5px);
+    color: #092100;
+}
+
+li:hover:before {
+    background-color: #092100;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Confirmation Page Specific Styles */
+.confirmation-box {
+    background: linear-gradient(135deg, #fff 0%, #F4F2ED 100%);
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 100px auto;
+    box-shadow: 0 10px 30px rgba(140, 122, 107, 0.1);
+    border: 1px solid rgba(232, 225, 215, 0.5);
+    border-top: 5px solid #092100;
+}
+
+.confirmation-box h1 {
+    font-family: 'Playfair Display', serif;
+    color: #092100;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    display: inline-block;
+}
+
+.confirmation-box p {
+    color: #8C7A6B;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(145deg, #092100, #0f3600);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: linear-gradient(145deg, #FF6700, #ff7b1f);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(9, 33, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .confirmation-box {
+        padding: 40px 20px;
+        margin: 40px 20px;
+    }
+    
+    .confirmation-box h1 {
+        font-size: 28px;
+    }
+    
+    .confirmation-box p {
+        font-size: 16px;
+    }
+} 
