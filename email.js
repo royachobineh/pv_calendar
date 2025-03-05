@@ -54,3 +54,7 @@ async function sendEmail(event) {
                 "There was an error sending your request. Please try again.";
         });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('meetingForm').addEventListener('submit', sendEmail);
+});

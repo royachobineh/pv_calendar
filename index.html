@@ -52,41 +52,41 @@
                 <li>It'll be a legendary story you can tell at parties.</li>
             </ul>
         </div>
-
-        <div class="calendar-box">
-            <h2>Schedule Your Exclusive Meeting Below!</h2>
-            <form id="meetingForm" onsubmit="sendEmail(event)" action="javascript:void(0);" novalidate>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="date">Select Date:</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="time">Select Time:</label>
-                    <input type="time" id="time" name="time" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="duration">Duration:</label>
-                    <select id="duration" name="duration" required>
-                        <option value="1">1 minute (not recommended)</option>
-                        <option value="10">10 minutes</option>
-                        <option value="30">30 minutes</option>
-                        <option value="1440">Full day!</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="submit-btn">Teach Me What I Should Be Teaching You</button>
-            </form>
-            <div id="status-message"></div>
-        </div>
     </div>
 
     <script src="email.js"></script>
+    
+    <div class="calendar-box">
+        <h2>Schedule Your Exclusive Meeting Below!</h2>
+        <form id="meetingForm" onsubmit="sendEmail(event)" action="javascript:void(0);" novalidate>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Duration:</label>
+                <select id="duration" name="duration" required>
+                    <option value="1">1 minute (not recommended)</option>
+                    <option value="10">10 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="1440">Full day!</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Teach Me What I Should Be Teaching You</button>
+        </form>
+        <div id="status-message"></div>
+    </div>
 </body>
 </html>
