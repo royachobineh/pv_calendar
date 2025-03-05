@@ -57,15 +57,18 @@ async function sendEmail(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('meetingForm');
-    if (form) {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        try {
+            // Your existing emailjs send logic here
             
-            // Your existing email sending logic here
-            
-            // After successful submission, redirect
-            window.location.href = '/confirmation.html';
-            return false;
-        });
-    }
+            // After successful submission
+            window.location.href = '/confirmation';  // or whatever your confirmation page URL is
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('status-message').textContent = 'Something went wrong. Please try again.';
+        }
+    });
 });
