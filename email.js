@@ -55,6 +55,17 @@ async function sendEmail(event) {
         });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('meetingForm').addEventListener('submit', sendEmail);
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('meetingForm');
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Your existing email sending logic here
+            
+            // After successful submission, redirect
+            window.location.href = '/confirmation.html';
+            return false;
+        });
+    }
 });
