@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/confirmation.html", "dest": "/confirmation.html" },
+    { "src": "/confirmation", "dest": "/confirmation.html" }
+  ],
+  "cleanUrls": true
+} 
