@@ -319,18 +319,6 @@ select {
     width: 100%;
     height: 100%;
     z-index: -1;
-    overflow: hidden;
-}
-
-.video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
 }
 
 .overlay {
@@ -339,11 +327,8 @@ select {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(244, 242, 237, 0.97) 0%,
-        rgba(232, 225, 215, 0.95) 100%
-    );
+    background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+    opacity: 0.9;
 }
 
 /* Special Text Elements */
