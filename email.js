@@ -47,7 +47,10 @@ async function sendEmail(event) {
     try {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
-        window.location.href = '/confirmation';
+        
+        // Get the current domain
+        const domain = window.location.origin;
+        window.location.replace(`${domain}/confirmation.html`);
     } catch (error) {
         console.log('FAILED...', error);
         document.getElementById('status-message').innerHTML = 
