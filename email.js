@@ -1,8 +1,8 @@
 // First add this script to your HTML:
 // <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-function sendEmail(e) {
-    e.preventDefault();
+async function sendEmail(event) {
+    event.preventDefault();
     
     emailjs.init("mLNvxe2aQsvGkI-_k");
 
