@@ -1,14 +1,22 @@
 {
   "version": 2,
-  "routes": [
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "rewrites": [
+    { 
+      "source": "/confirmation",
+      "destination": "/confirmation.html"
+    }
+  ],
+  "headers": [
     {
-      "src": "/confirmation",
-      "status": 200,
-      "dest": "/confirmation.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
     }
   ]
 } 

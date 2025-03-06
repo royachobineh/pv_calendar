@@ -48,8 +48,8 @@ async function sendEmail(event) {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
         
-        // Try with the full path
-        window.location.href = '/confirmation.html';
+        // Use the clean URL without .html
+        window.location.replace('/confirmation');
     } catch (error) {
         console.log('FAILED...', error);
         document.getElementById('status-message').innerHTML = 
