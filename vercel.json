@@ -1,7 +1,13 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static" }
+  ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/confirmation", "dest": "/confirmation.html" }
+    { "src": "/email.js", "dest": "/email.js" },
+    { "src": "/confirmation", "dest": "/confirmation.html" },
+    { "src": "/confirmation.html", "dest": "/confirmation.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 } 
