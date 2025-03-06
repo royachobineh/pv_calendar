@@ -1,11 +1,6 @@
 {
   "version": 2,
   "framework": null,
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "rewrites": [
     { "source": "/confirmation", "destination": "/confirmation.html" }
   ],
@@ -17,7 +12,5 @@
       ]
     }
   ],
-  "buildCommand": "npm run build",
-  "outputDirectory": ".",
   "cleanUrls": true
 } 
