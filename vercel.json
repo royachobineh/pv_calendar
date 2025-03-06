@@ -2,7 +2,8 @@
   "version": 2,
   "framework": null,
   "rewrites": [
-    { "source": "/confirmation", "destination": "/confirmation.html" }
+    { "source": "/confirmation", "destination": "/confirmation.html" },
+    { "source": "/confirmation.html", "destination": "/confirmation.html" }
   ],
   "headers": [
     {
