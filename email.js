@@ -48,9 +48,9 @@ async function sendEmail(event) {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
         
-        // Get the current domain
-        const domain = window.location.origin;
-        window.location.replace(`${domain}/confirmation.html`);
+        // Use the full Vercel URL
+        const baseUrl = 'https://your-site.vercel.app'; // Replace with your actual Vercel URL
+        window.location.href = `${baseUrl}/confirmation.html`;
     } catch (error) {
         console.log('FAILED...', error);
         document.getElementById('status-message').innerHTML = 
