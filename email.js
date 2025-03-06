@@ -48,8 +48,8 @@ async function sendEmail(event) {
         const response = await emailjs.send('service_8nud85j', 'template_gjgepwh', templateParams);
         console.log('SUCCESS!', response.status, response.text);
         
-        // Use the Vercel deployment URL
-        window.location.href = 'https://pv-calendar.vercel.app/confirmation';
+        // Try with the full path
+        window.location.href = '/confirmation.html';
     } catch (error) {
         console.log('FAILED...', error);
         document.getElementById('status-message').innerHTML = 
