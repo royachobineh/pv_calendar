@@ -1,17 +1,14 @@
 {
   "version": 2,
-  "framework": null,
-  "rewrites": [
-    { "source": "/confirmation", "destination": "/confirmation.html" },
-    { "source": "/confirmation.html", "destination": "/confirmation.html" }
-  ],
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
+      "src": "/confirmation",
+      "status": 200,
+      "dest": "/confirmation.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
-  ],
-  "cleanUrls": true
+  ]
 } 
