@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "trailingSlash": false,
-  "cleanUrls": true,
-  "rewrites": [
-    { 
-      "source": "/confirmation",
-      "destination": "/confirmation.html"
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
-      ]
+      "handle": "filesystem"
+    },
+    {
+      "src": "/confirmation",
+      "dest": "/confirmation.html"
     }
   ]
 } 
