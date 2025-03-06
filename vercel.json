@@ -1,9 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "*.js", "use": "@vercel/static" }
-  ],
   "routes": [
     { "src": "/email.js", "dest": "/email.js" },
     { "src": "/confirmation", "dest": "/confirmation.html" },
