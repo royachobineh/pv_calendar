@@ -1,9 +1,23 @@
 {
   "version": 2,
-  "routes": [
-    { "src": "/email.js", "dest": "/email.js" },
-    { "src": "/confirmation", "dest": "/confirmation.html" },
-    { "src": "/confirmation.html", "dest": "/confirmation.html" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  "framework": null,
+  "functions": {
+    "api/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    { "source": "/confirmation", "destination": "/confirmation.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "cleanUrls": true
 } 
